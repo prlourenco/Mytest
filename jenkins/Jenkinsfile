@@ -4,7 +4,10 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo "Starting the sourcecode compilation"'
-                sh 'mvn --version'
+		dir("java") {
+                	sh 'echo "Starting the JAVA compilation"'
+                	sh 'mvn clean package'
+		}
             }
         }
     }
