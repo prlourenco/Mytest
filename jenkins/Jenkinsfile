@@ -19,7 +19,7 @@ pipeline {
         always {
             echo 'This will always run'
 	    archiveArtifacts artifacts: 'java/target/*.jar', fingerprint: true
-            junit 'java/*-reports/*.xml'
+            junit 'java/target/*-reports/*.xml'
         }
         success {
             echo 'This will run only if successful'
