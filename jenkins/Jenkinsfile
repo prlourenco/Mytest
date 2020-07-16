@@ -18,6 +18,8 @@ pipeline {
     post {
         always {
             echo 'This will always run'
+	    archiveArtifacts artifacts: 'java/target/*.jar', fingerprint: true
+            junit 'java/*-reports/*.xml'
         }
         success {
             echo 'This will run only if successful'
