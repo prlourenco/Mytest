@@ -6,7 +6,7 @@ pipeline {
                 sh 'echo "Starting the sourcecode compilation"'
 		dir("java") {
                 	sh 'echo "Starting the JAVA compilation"'
-                	sh 'mvn clean package surefire-report:report'
+                	sh 'mvn clean package jxr:jxr surefire-report:report'
 		}
             }
         }
