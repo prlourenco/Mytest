@@ -14,7 +14,23 @@ pipeline {
             steps {
                 sh 'echo "Not implemented yet!"'
             }
-        }    }
+        }
+        stage('Deploy - Staging') {
+            steps {
+                sh 'echo "Not implemented yet!"'
+            }
+        }
+        stage('Sanity check') {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+        }
+        stage('Deploy - Production') {
+            steps {
+                sh 'echo "Not implemented yet!"'
+            }
+        }
+    }
     post {
         always {
             echo 'This will always run'
